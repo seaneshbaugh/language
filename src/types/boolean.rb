@@ -18,6 +18,10 @@ module Language
       def to_s
         @value.to_s
       end
+
+      def type
+        :boolean
+      end
     end
   end
 end

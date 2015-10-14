@@ -14,6 +14,10 @@ module Language
       def to_s
         @value.to_s
       end
+
+      def type
+        :number
+      end
     end
   end
 end

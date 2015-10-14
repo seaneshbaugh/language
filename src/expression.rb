@@ -14,6 +14,10 @@ module Language
       to_s
     end
 
+    def length
+      @parts.length
+    end
+
     def to_s
       "Expression<#{@parts.map(&:to_s).join(', ')}>"
     end

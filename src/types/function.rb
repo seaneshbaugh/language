@@ -16,9 +16,12 @@ module Language
       def call(*args)
         fail "Wrong number of arguments passed, expected #{@arity} but got #{args.length}." if args.length != @arity
 
-        # This is almosy definitely a terrible idea since it will lead to all kinds of unintended consequences when the value bound to an argument variable changes. But maybe that's for the better?
-        # I think I need to implement some sort of stack for scoping and then have variables put on the current level of the stack and then when they're referenced the stack will be searched from
-        # bottom to top for the variable and then overwritten.
+        # This is almosy definitely a terrible idea since it will lead to all kinds of unintended
+        # consequences when the value bound to an argument variable changes. But maybe that's for
+        # the better?
+        # I think I need to implement some sort of stack for scoping and then have variables put on
+        # the current level of the stack and then when they're referenced the stack will be searched
+        # from bottom to top for the variable and then overwritten.
         applied_value = @value.clone
 
         @argument_list.parts.map { |argument| argument.value }.zip(args).each do |argument_name, argument_value|
@@ -27,9 +30,7 @@ module Language
           end
         end
 
-        puts applied_value.inspect
-
-        @interpreter.eval(applied_value)
+        @interpreter.eval(applied_value).first
       end
 
       def type

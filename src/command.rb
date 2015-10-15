@@ -41,6 +41,8 @@ module Language
 
       puts tokens if @options[:verbose]
 
+      return
+
       parser = Language::Parser.new(tokens)
 
       ast = parser.parse!

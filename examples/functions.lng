@@ -2,3 +2,8 @@
   (* x x))
 
 (print (square 10))
+
+(defun cube (x)
+  (* x x x))
+
+(print (cube 8))

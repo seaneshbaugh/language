@@ -1,6 +1,6 @@
 module Language
   class Token
-    attr_reader :type, :value
+    attr_accessor :type, :value
 
     def initialize(type, value = '')
       @type = type

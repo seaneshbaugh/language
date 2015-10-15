@@ -37,10 +37,14 @@ module Language
     def continue_token(current_character)
       case current_character
       when/\s/
+        check_for_literal_symbols
+
         @tokens << @current_token
 
         @current_token = nil
       when ')'
+        check_for_literal_symbols
+
         @tokens << @current_token
 
         @current_token = nil
@@ -101,6 +105,15 @@ module Language
         @current_token = Token.new(:string)
       else
         @current_token = Token.new(:symbol, current_character)
+      end
+    end
+
+    def check_for_literal_symbols
+      case @current_token.value
+      when 'true'
+        @current_token.type = :boolean
+      when 'false'
+        @current_token.type = :boolean
       end
     end
   end

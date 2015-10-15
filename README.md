@@ -13,7 +13,6 @@ To run a program run `bin/language` and pass it the path to a file.
 ## Implemented
 
 * Lexer
-
 * Simple printing of values
 
 ## Partially Implemented
@@ -21,11 +20,10 @@ To run a program run `bin/language` and pass it the path to a file.
 * Command-line script
 * Parser
 * Interpreter
-
 * Numbers
 * Strings
 * Booleans
-
+* Functions
 * Simple testing for equality
 * Adding numbers
 * Adding strings
@@ -37,14 +35,11 @@ To run a program run `bin/language` and pass it the path to a file.
 * Tests
 * Useful error messages
 * REPL
-
 * Lists (I know, right?)
 * nil (or empty list)
-* Functions
 * Lambdas
 * Hash Tables/Dictionaries
 * Atoms
-
 * Cons, car, cdr
 * Conditional branching
 * All other arithmetic
